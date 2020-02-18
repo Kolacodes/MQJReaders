@@ -1,0 +1,185 @@
+<% include ../partials/header %>
+<div class="container">
+<!-- <header><a href="/"><img src="/images/mqjreaders.png" /></a></header> -->
+
+<section class="main-slider">
+<ul class="bxslider">
+	<li>
+	<div class="slider-item"><img src="/images/jon.jpg" title="Funky roots" />
+	<h2><a title="Vintage-Inspired Finds for Your Home">The journey is on...</a></h2>
+	<!--https://images.pexels.com/photos/36759/graffiti-berlin-wall-wall-trabi.jpg?cs=srgb&amp;dl=art-artsy-creative-36759.jpg&amp;fm=jpg-->
+	</div>
+	</li>
+	<li>
+	<div class="slider-item"><img src="/images/clip.jpg" title="Funky roots" />
+	<!--	https://images.pexels.com/photos/265125/pexels-photo-265125.jpeg?cs=srgb&amp;dl=apartment-apple-building-265125.jpg&amp;fm=jpg-->
+	<h2><a title="Vintage-Inspired Finds for Your Home">MQJ tawheed clips..</a></h2>
+	</div>
+	</li>
+	<li>
+	<div class="slider-item"><img src="/images/feed.jpg" title="Funky roots" />
+	<!--https://images.pexels.com/photos/2160282/pexels-photo-2160282.jpeg?cs=srgb&amp;dl=bowl-close-up-cuisine-2160282.jpg&amp;fm=jpg-->
+	<h2><a title="Vintage-Inspired Finds for Your Home">Feed your faith lest it fades..</a></h2>
+	</div>
+	</li>
+</ul>
+</section>
+
+<section>
+<div class="row">
+<div class="col-md-8">
+
+
+
+
+	
+
+
+        
+
+<article class="blog-post">
+		<% all_posts.forEach(function(each_post) { %>
+<div class="blog-post-image"><a href="/posts/<%= each_post._id %>"><img alt="" src="<%=each_post.image%>" /></a></div>
+
+<div class="blog-post-body">
+<h2><a href="/posts/<%= each_post._id %>"><%=each_post.title%></a></h2>
+
+<div class="post-meta"><span>by <a href="/posts/<%= each_post._id %>"><%- each_post.author%></a></span>/<span><%=each_post.date%></span>/<span> <a href="#">...</a></span></div>
+
+
+<p> <%- each_post.body.substring(0, 300) %>... </p>
+
+<div class="read-more"><a href="/posts/<%= each_post._id %>">Continue Reading</a></div>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<%  }); %>
+</article>
+
+
+
+<!-- </div>
+
+<div class="col-md-4 sidebar-gutter">
+<aside>sidebar-widget
+<div class="sidebar-widget"> -->
+<!-- <h3 class="sidebar-title"><a class="sidebar-title" href="http://myquranjourney.net">My Qur&#39;an</a></h3> -->
+
+<!-- <div class="widget-container widget-about"><a href="http://myquranjourney.net"><img alt="" src="" /></a> -->
+<!--https://images.pexels.com/photos/115144/pexels-photo-115144.jpeg?cs=srgb&amp;dl=books-cup-drink-115144.jpg&amp;fm=jpg-->
+
+<!-- <h4>Almustapha Author</h4>
+
+<div class="author-title">Instructor</div>
+
+<p>When we learn the Qur'an we lighten up our lives; we get elevated from a lowly earth to a higher companionship whereof we enjoy the company of angels.</p>
+</div>
+</div> -->
+<!-- sidebar-widget -->
+
+<!-- <div class="sidebar-widget">
+<h3 class="sidebar-title">Featured Posts</h3>
+
+<div class="widget-container">
+<article class="widget-post">
+<div class="post-image"><a><img alt="" src="images/90x60-1.jpg" /></a></div>
+
+<div class="post-body">
+<h2><a>We Started Out As Stammerers</a></h2>
+
+<div class="post-meta"><span>2. august 2018</span> <span><a> ..</a></span></div>
+</div>
+</article>
+
+<article class="widget-post">
+<div class="post-image"><a><img alt="" src="images/90x60-2.jpg" /></a></div>
+
+<div class="post-body">
+<h2><a>Building New Bridges</a></h2>
+
+<div class="post-meta"><span>2. august 2018</span> <span><a> ..</a></span></div>
+</div>
+</article>
+<article class="widget-post">
+								<div class="post-image">
+									<a href=""><img src="images/90x60-3.jpg" alt=""></a>
+								</div>
+								<div class="post-body">
+									<h2><a href="#">He Lives Around</a></h2>
+									<div class="post-meta">
+										<span><i class="fa fa-clock-o"></i> 2. august 2018</span> <span><a href=""><i class="fa fa-comment-o"></i>...</a></span>
+									</div>
+								</div>
+							</article>
+							<article class="widget-post">
+								<div class="post-image">
+									<a href=""><img src="images/90x60-4.jpg" alt=""></a>
+								</div>
+								<div class="post-body">
+									<h2><a href="#">Beyond The Castle</a></h2>
+									<div class="post-meta">
+										<span><i class="fa fa-clock-o"></i> 2. august 2018</span> <span><a href=""><i class="fa fa-comment-o"></i> 23</a></span>
+									</div>
+								</div>
+							</article><article class="widget-post">
+									<div class="post-image">
+										<a href=""><img src="images/90x60-4.jpg" alt=""></a>
+									</div>
+									<div class="post-body">
+										<h2><a href="#">Oblivion!</a></h2>
+										<div class="post-meta">
+											<span><i class="fa fa-clock-o"></i> 2. august 2018</span> <span><a href=""><i class="fa fa-comment-o"></i> 23</a></span>
+										</div>
+									</div>
+								</article>
+
+</div>
+</div> 
+ -->
+
+
+<!-- sidebar-widget -->
+
+<!-- <div class="sidebar-widget">
+<h3 class="sidebar-title">Socials</h3>
+
+<div class="widget-container">
+<div class="widget-socials"></div>
+</div>
+</div> -->
+<!-- sidebar-widget -->
+
+<!-- <div class="sidebar-widget">
+<h3 class="sidebar-title">Categories</h3>
+
+<div class="widget-container">
+<ul>
+	<li><a href="#">Qur&#39;an</a></li>
+	<li><a href="#">Feminism</a></li>
+	<li><a href="#">Sisters</a></li>
+	
+	<li><a href="#">Marriage</a></li>
+	<li><a href="#">Manhaj</a></li>
+	<li><a href="#">Aqeedah</a></li>
+	<li><a href="#">Fiction</a></li>
+</ul>
+</div> -->
+</div>
+</aside>
+</div>
+
+</div>
+</section>
+</div>
+<!-- /.container -->
+
+
+<% include ../partials/footer %>
+
+
+

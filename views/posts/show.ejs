@@ -1,0 +1,176 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+                  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111995277-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111995277-2');
+</script>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" href="favicon.ico">
+		<title><%-found_post.title%></title>
+		<!-- Bootstrap core CSS -->
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<!-- Custom styles for this template -->
+		<link href="/css/jquery.bxslider.css" rel="stylesheet">
+		<link href="/css/style.css" rel="stylesheet">
+	</head>
+
+		<div class="container">
+
+			<div style="text-align: center;">
+
+				
+				
+				<ul>
+					<ol>
+						<strong style="color: rgb(162, 165, 16)">
+							<button style="background-color: white">
+								<a href="/posts">Visit Homepage</a>
+							</button>
+						</strong>
+
+					</ol>
+					<br>
+					<ol>
+						<button id='modalBtn' class='button'> <p >Soft Click</p> </button>
+
+					</ol>
+
+				</ul>
+
+
+			</div>
+
+
+
+
+    <div id='simpleModal' class='modal'>
+      <div class='modal-content'>
+        <div class='modal-header'>
+          <span class='closeBtn'>&times;</span>
+          <h2>Afrocodez</h2>
+        </div>
+        <div class='modal-body'>
+          <p>Assalaamu 'alaykum..</p>
+		  <p>Building a groundbreaking brand never has been a one man's burden. Every successful brand was indeed a result of a few great hands come together. <br> 
+			<p> Kolacodes is such an intuitive Muslim software developer and he's our go-to guy. Got a few hiccups with your brand? Speak to Kolacodes. <br>
+				<br>
+				 With great minds like him you will in no time get your brand to the dreamland, In Shaa Allah</p>
+          </p>
+        </div>
+        <div class='modal-footer'>
+          <h3> <a href="https://kolacodes.herokuapp.com">Visit Site</a> </h3>
+        </div>
+      </div>
+    </div>
+    <script src='/js/bundle.js'></script>
+			
+		<header>
+			<a ><img src="<%=found_post.image%>"></a>
+		</header>
+		
+		<section>
+			<div class="row">
+				<div class="col-md-12">
+					<article class="blog-post">
+						<div class="blog-post-body">
+							<h2><a ><%-found_post.title%></a></h2>
+							<div class="blog-post-text">
+
+								<p><%-found_post.body%></p>							
+							</div>
+							<br>
+
+							<div class="row">
+									<div class="col-md-12">
+										<article class="blog-post">
+											<div class="blog-post-body">
+												<h2><a ></a></h2>
+												<div class="blog-post-text">
+					
+										
+												</div>
+												<br>
+												<br>
+											   
+												
+<!-- COMMENT SECTION -->			
+					
+					<div class="well">
+						<p>
+
+							<strong style="color: rgb(162, 165, 16)">
+								<button style="background-color: white"><%= found_post.comments.length %>
+									COMMENT<% if (found_post.comments.length > 1){%>S
+												 <% } else {}; %>
+								</button>
+						</strong>
+				
+						<span class="pull-right">
+							<a class="btn btn-success" style="background-color: rgb(250, 250, 255);" href="/posts/<%=found_post._id%>/comments/new">Add New Comment</a>
+					
+						</span>
+				
+				
+						  </p>
+
+						  <br>
+						  <br>
+						  <br>
+						  <br>
+
+						<% found_post.comments.forEach(function(comment){ %>
+									 
+							<div class="row">
+								<div class="col-md-12"></div>
+								    <strong ><%= comment.author.username %></strong>
+								   <p style="font-size: small;"><%= comment.body %></p>
+
+							 <% if(currentUser && String(comment.author.id) === String(currentUser._id)){ %>
+								   <a class="btn btn-xs btn-warning"
+									  href="/posts/<%=found_post._id%>/comments/<%=comment._id%>/edit">
+									  Edit
+								   </a>
+								   <form id="delete-book" action="/posts/<%=found_post._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+										<input type="submit" class="btn btn-xs btn-danger" value="Delete"> </input>
+								   </form>
+							<% }%>
+							</div>
+					   <% }); %>
+					</div>
+					
+											</div>
+					
+												<div class="read-more"><a href="http://myquranjourney.net">Join us in this journey!</a></div>
+											</div>
+										</article>
+										
+									</div>
+								</div>
+	
+						</div>
+					</article>
+					
+				</div>
+			</div>
+		</section>
+		</div>
+            </div>
+        </div>
+    </div>
+</div>
