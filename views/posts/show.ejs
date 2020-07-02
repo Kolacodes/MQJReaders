@@ -1,3 +1,52 @@
+  <div class="container"></div>
+
+  <!-- showcase -->
+  <div class="customContainer" id="showcase">
+    <div class="mobileBar wrapperOne">
+        <div class="toggler showcaseWrapItemOne">
+          <!-- Toggler Goes Here -->
+        </div>
+        <div class="logo showcaseWrapItemTwo">
+          <a href="/">
+          <img src="/images/logo2.jpeg" alt="Capture by Lucy" class="MobileBarBrandingLogo"> </a>
+        </div>
+        <div class="padlock showcaseWrapItemThree">
+          <!-- Padlock Goes Here -->
+        </div>
+   </div>
+   <div class="clr"></div>
+  </div>
+  <!-- end of showcase -->
+
+
+<!-- article section -->
+<section class="container">
+  <div class="blogPostSection">
+    <article>
+
+      <h1 class="blogTitle"><%-found_post.title%></h1>
+						<div class="author">&copy; <%-found_post.author%></div>
+						<!-- <br> -->
+
+			<div class="author"><%-found_post.date%></div>
+			<img class="figure" src="<%=found_post.image%>" alt="">
+
+			<br>
+			<div class="body"><%-found_post.body%></div>
+
+    </article>
+  </div> 
+</section>
+<!-- end of article section -->
+  
+
+  <div class="commentSection">
+
+  </div>
+
+
+
+
 
 
 <!DOCTYPE html>
@@ -27,29 +76,11 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<!-- Custom styles for this template -->
 		<link href="/css/jquery.bxslider.css" rel="stylesheet">
-		<link href="/css/style.css" rel="stylesheet">
+		<link href="/css/luccy.css" rel="stylesheet">
 	</head>
 
-		<div class="container">
-			<div style="text-align: center;">						
-				<ul>
-					<ol>
-						<strong style="color: rgb(162, 165, 16)">
-							<button style="background-color: white">
-								<a href="/posts">Visit Homepage</a>
-							</button>
-						</strong>
+		
 
-					</ol>
-					<br>
-					<ol>
-						<button id='modalBtn' class='button'> <p >Soft Click</p> </button>
-
-					</ol>
-
-				</ul>
-
-			</div>
 
     <div id='simpleModal' class='modal'>
       <div class='modal-content'>
@@ -60,109 +91,30 @@
         <div class='modal-body'>
           <p>Assalaamu 'alaykum..</p>
 		  <p>Building a groundbreaking brand never has been a one man's burden. Every successful brand was indeed a result of a few great hands come together. <br> 
-			<p> Afrocodez is such an intuitive Muslim software developer and he's our go-to guy. Got a few hiccups with your brand? Speak to Afrocodez. <br>
+			<p> Kolacodes is such an intuitive Muslim software developer and he's our go-to guy. Got a few hiccups with your brand? Speak to Kolacodes. <br>
 				<br>
 				 With great minds like him you will in no time get your brand to the dreamland, In Shaa Allah</p>
           </p>
         </div>
         <div class='modal-footer'>
-          <h3> <a href="http://afrocodez.com">Visit Site</a> </h3>
+          <h3> <a href="https://kolacodes.herokuapp.com">Visit Site</a> </h3>
         </div>
       </div>
     </div>
     <script src='/js/bundle.js'></script>
-			
-		<header>
-			<a ><img src="<%=found_post.image%>"></a>
-		</header>
 		
-		<section>
-			<div class="row">
-				<div class="col-md-12">
-					<article class="blog-post">
-						<div class="blog-post-body">
-							<h2><a ><%-found_post.title%></a></h2>
-							<div class="blog-post-text">
 
-								<p><%-found_post.body%></p>							
-							</div>
-							<br>
-
-							<div class="row">
-									<div class="col-md-12">
-										<article class="blog-post">
-											<div class="blog-post-body">
-												<h2><a ></a></h2>
-												<div class="blog-post-text">
-					
-										
-												</div>
-												<br>
-												<br>
-											   
-												
-<!-- COMMENT SECTION -->			
-					
-					<div class="well">
-						<p>
-
-							<strong style="color: rgb(162, 165, 16)">
-								<button style="background-color: white"><%= found_post.comments.length %>
-									COMMENT<% if (found_post.comments.length > 1){%>S
-												 <% } else {}; %>
-								</button>
-						</strong>
-				
-						<span class="pull-right">
-							<a class="btn btn-success" style="background-color: rgb(250, 250, 255);" href="/posts/<%=found_post._id%>/comments/new">Add New Comment</a>
-					
-						</span>
-				
-				
-						  </p>
-
-						  <br>
-						  <br>
-						  <br>
-						  <br>
-
-						<% found_post.comments.forEach(function(comment){ %>
-									 
-							<div class="row">
-								<div class="col-md-12"></div>
-								    <strong ><%= comment.author.username %></strong>
-								   <p style="font-size: small;"><%= comment.body %></p>
-
-							 <% if(currentUser && String(comment.author.id) === String(currentUser._id)){ %>
-								   <a class="btn btn-xs btn-warning"
-									  href="/posts/<%=found_post._id%>/comments/<%=comment._id%>/edit">
-									  Edit
-								   </a>
-								   <form id="delete-book" action="/posts/<%=found_post._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
-										<input type="submit" class="btn btn-xs btn-danger" value="Delete"> </input>
-								   </form>
-							<% }%>
-							</div>
-					   <% }); %>
-					</div>
-					
-											</div>
-					
-												<div class="read-more"><a href="http://www.myquranjourney.net">Join us in this journey!</a></div>
-											</div>
-										</article>
-										
-									</div>
-								</div>
-	
-						</div>
-					</article>
-					
-				</div>
-			</div>
-		</section>
-		</div>
-            </div>
-        </div>
-    </div>
+			
+ <!-- footer -->
+ <div class="customContainer">
+	<div class="footerSection">
+		<p>Capture by Lucy Backdrops</p>
+		<p>Dorset SP7 9PT</p>
+		<p>Capture by Lucy® is a registered trademark. </p>
+	</div>
 </div>
+<br>
+<!-- end of footer -->  
+
+</body>
+</html>

@@ -1,209 +1,68 @@
 <% include ../partials/header %>
 
-<div id='simpleModal' class='modal'>
-	<div class='modal-content'>
-		<div class='modal-header'>
-			<span class='closeBtn'>&times;</span>
-			<h2>Afrocodez</h2>
-		</div>
-		<div class='modal-body'>
-			<p>Assalaamu 'alaykum..</p>
-	<p>Building a groundbreaking brand never has been a one man's burden. Every successful brand was indeed a result of a few great hands come together. <br> 
-	<p> Afrocodez is such an intuitive Muslim software developer and he's our go-to guy. Got a few hiccups with your brand? Speak to Afrocodez. <br>
-		<br>
-		 With great minds like him you will in no time get your brand to the dreamland, In Shaa Allah</p>
-			</p>
-		</div>
-		<div class='modal-footer'>
-			<h3> <a href="http://afrocodez.com">Visit Site</a> </h3>
-		</div>
-	</div>
-</div>
-<script src='/js/bundle.js'></script>
+<body>
+
+  <!-- showcase -->
+  <div class="customContainer" id="showcase">
+    <div class="mobileBar wrapperOne">
+        <div class="toggler showcaseWrapItemOne">
+          <!-- Toggler Goes Here -->
+        </div>
+        <div class="logo showcaseWrapItemTwo">
+          <a href="#">
+					 <img src="images/logo2.jpeg" alt="Capture by Lucy" class="MobileBarBrandingLogo">
+				</a>
+        </div>
+        <div class="padlock showcaseWrapItemThree">
+          <!-- Padlock Goes Here -->
+        </div>
+   </div>
+   <div class="clr"></div>
+  </div>
+	<!-- end of showcase -->
+
+
+
 	
-
-
-<div class="container">
-<!-- <header><a href="/"><img src="/images/mqjreaders.png" /></a></header> -->
-
-<section class="main-slider">
-<ul class="bxslider">
-	<li>
-	<div class="slider-item"><img src="/images/jon.jpg" title="Funky roots" />
-	<h2><a title="Vintage-Inspired Finds for Your Home">The journey is on...</a></h2>
-	<!--https://images.pexels.com/photos/36759/graffiti-berlin-wall-wall-trabi.jpg?cs=srgb&amp;dl=art-artsy-creative-36759.jpg&amp;fm=jpg-->
-	</div>
-	</li>
-	<li>
-	<div class="slider-item"><img src="/images/clip.jpg" title="Funky roots" />
-	<!--	https://images.pexels.com/photos/265125/pexels-photo-265125.jpeg?cs=srgb&amp;dl=apartment-apple-building-265125.jpg&amp;fm=jpg-->
-	<h2><a title="Vintage-Inspired Finds for Your Home">MQJ tawheed clips..</a></h2>
-	</div>
-	</li>
-	<li>
-	<div class="slider-item"><img src="/images/feed.jpg" title="Funky roots" />
-	<!--https://images.pexels.com/photos/2160282/pexels-photo-2160282.jpeg?cs=srgb&amp;dl=bowl-close-up-cuisine-2160282.jpg&amp;fm=jpg-->
-	<h2><a title="Vintage-Inspired Finds for Your Home">Feed your faith lest it fades..</a></h2>
-	</div>
-	</li>
-</ul>
+<!-- article section -->
+<section class="customContainer">
+  <div class="header">
+      <h1 class="header">Welcome to MQJ Blog</h1>
+      <br>
+  </div> 
 </section>
-
-<section>
-<div class="row">
-<div class="col-md-8">
-
+<!-- end of article section -->
+  
 
 
 
 	
 
-
-        
-
-<article class="blog-post">
-		<% all_posts.forEach(function(each_post) { %>
-<div class="blog-post-image"><a href="/posts/<%= each_post._id %>"><img alt="" src="<%=each_post.image%>" /></a></div>
-
-<div class="blog-post-body">
-<h2><a href="/posts/<%= each_post._id %>"><%=each_post.title%></a></h2>
-
-<div class="post-meta"><span>by <a href="/posts/<%= each_post._id %>"><%- each_post.author%></a></span>/<span><%=each_post.date%></div>
-
-
-<p> <%- each_post.body.substring(0, 300) %>... </p>
-
-<div class="read-more"><a href="/posts/<%= each_post._id %>">Continue Reading</a></div>
+<section class="blogsDisplaySection">
+	<% all_posts.forEach(function(each_post) { %>
+<div class="blog-post-image"><a href="/posts/<%= each_post._id %>"><img class="blog-post-image2" alt="" src="<%=each_post.image%>" /></a>
+		<p> <a class="postTitleIndex" href="/posts/<%= each_post._id %>"> <em class="postTitleIndex"><%- each_post.title%></em> </a></p>
 </div>
-<br>
-<br>
-<br>
-<br>
-
-
-
 <%  }); %>
-</article>
-
-
-
-<!-- </div>
-
-<div class="col-md-4 sidebar-gutter">
-<aside>sidebar-widget
-<div class="sidebar-widget"> -->
-<!-- <h3 class="sidebar-title"><a class="sidebar-title" href="http://myquranjourney.net">My Qur&#39;an</a></h3> -->
-
-<!-- <div class="widget-container widget-about"><a href="http://myquranjourney.net"><img alt="" src="" /></a> -->
-<!--https://images.pexels.com/photos/115144/pexels-photo-115144.jpeg?cs=srgb&amp;dl=books-cup-drink-115144.jpg&amp;fm=jpg-->
-
-<!-- <h4>Almustapha Author</h4>
-
-<div class="author-title">Instructor</div>
-
-<p>When we learn the Qur'an we lighten up our lives; we get elevated from a lowly earth to a higher companionship whereof we enjoy the company of angels.</p>
-</div>
-</div> -->
-<!-- sidebar-widget -->
-
-<!-- <div class="sidebar-widget">
-<h3 class="sidebar-title">Featured Posts</h3>
-
-<div class="widget-container">
-<article class="widget-post">
-<div class="post-image"><a><img alt="" src="images/90x60-1.jpg" /></a></div>
-
-<div class="post-body">
-<h2><a>We Started Out As Stammerers</a></h2>
-
-<div class="post-meta"><span>2. august 2018</span> <span><a> ..</a></span></div>
-</div>
-</article>
-
-<article class="widget-post">
-<div class="post-image"><a><img alt="" src="images/90x60-2.jpg" /></a></div>
-
-<div class="post-body">
-<h2><a>Building New Bridges</a></h2>
-
-<div class="post-meta"><span>2. august 2018</span> <span><a> ..</a></span></div>
-</div>
-</article>
-<article class="widget-post">
-								<div class="post-image">
-									<a href=""><img src="images/90x60-3.jpg" alt=""></a>
-								</div>
-								<div class="post-body">
-									<h2><a href="#">He Lives Around</a></h2>
-									<div class="post-meta">
-										<span><i class="fa fa-clock-o"></i> 2. august 2018</span> <span><a href=""><i class="fa fa-comment-o"></i>...</a></span>
-									</div>
-								</div>
-							</article>
-							<article class="widget-post">
-								<div class="post-image">
-									<a href=""><img src="images/90x60-4.jpg" alt=""></a>
-								</div>
-								<div class="post-body">
-									<h2><a href="#">Beyond The Castle</a></h2>
-									<div class="post-meta">
-										<span><i class="fa fa-clock-o"></i> 2. august 2018</span> <span><a href=""><i class="fa fa-comment-o"></i> 23</a></span>
-									</div>
-								</div>
-							</article><article class="widget-post">
-									<div class="post-image">
-										<a href=""><img src="images/90x60-4.jpg" alt=""></a>
-									</div>
-									<div class="post-body">
-										<h2><a href="#">Oblivion!</a></h2>
-										<div class="post-meta">
-											<span><i class="fa fa-clock-o"></i> 2. august 2018</span> <span><a href=""><i class="fa fa-comment-o"></i> 23</a></span>
-										</div>
-									</div>
-								</article>
-
-</div>
-</div> 
- -->
-
-
-<!-- sidebar-widget -->
-
-<!-- <div class="sidebar-widget">
-<h3 class="sidebar-title">Socials</h3>
-
-<div class="widget-container">
-<div class="widget-socials"></div>
-</div>
-</div> -->
-<!-- sidebar-widget -->
-
-<!-- <div class="sidebar-widget">
-<h3 class="sidebar-title">Categories</h3>
-
-<div class="widget-container">
-<ul>
-	<li><a href="#">Qur&#39;an</a></li>
-	<li><a href="#">Feminism</a></li>
-	<li><a href="#">Sisters</a></li>
-	
-	<li><a href="#">Marriage</a></li>
-	<li><a href="#">Manhaj</a></li>
-	<li><a href="#">Aqeedah</a></li>
-	<li><a href="#">Fiction</a></li>
-</ul>
-</div> -->
-</div>
-</aside>
-</div>
-
-</div>
+<div class="clr"></div>
 </section>
+
+<!-- end of blogs display section -->
+  
+
+ <!-- footer -->
+ <div class="customContainer">
+   <div class="footerSection">
+		 <p>Copyright MQJ &copy; 2020. All rights reserved</p>
+		 <p>Created by <a href="http://afrocodez.com"><span>Afrocodez</span></a></p>
+		 
+   </div>
 </div>
-<!-- /.container -->
+<br>
+<!-- end of footer -->  
 
-
-<% include ../partials/footer %>
+</body>
+</html>
 
 
 

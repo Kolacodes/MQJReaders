@@ -3,20 +3,14 @@ let modalBtn = document.getElementById('modalBtn');
 // add [] cause close button is collection of a buttons
 let closeBtn = document.getElementsByClassName('closeBtn')[0];
 
-
-document.addEventListener('DOMContentLoaded', openModal);
-
-
-
+//listen for open click
+modalBtn.addEventListener('click', openModal);
 
 // listen for close click
 closeBtn.addEventListener('click', closeModal);
 
 // listen for outside click
 window.addEventListener('click', outsideClick);
-
-//listen for open click
-modalBtn.addEventListener('click', openModal);
 
 function openModal() {
   modal.style.display = 'block';

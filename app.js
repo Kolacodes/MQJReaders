@@ -1,6 +1,6 @@
 var express         = require ("express");
     app             = express(),
-    port            = process.env.PORT || 8000,
+    port            = process.env.PORT || 3000,
     bodyParser      = require ("body-parser"),
     mongoose        = require ("mongoose"),
     methodOverride  = require("method-override"),
@@ -14,7 +14,7 @@ var express         = require ("express");
     indexRoutes = require("./routes/index"),
     postRoutes = require("./routes/posts"),
     commentRoutes = require("./routes/comments"),
-    // url             = "mongodb://localhost/mqj_blog";
+    // url             = "mongodb://localhost/mqj_blog",
     url = "mongodb+srv://root:mypassword@bookreviewcluster-mrefw.mongodb.net/mqjreaders?retryWrites=true&w=majority";
 
 
