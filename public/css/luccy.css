@@ -49,6 +49,10 @@ a{
   clear: both;
 }
 
+#showcase{
+  height: 50vh;
+}
+
 .wrapperOne{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
