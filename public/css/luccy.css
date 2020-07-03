@@ -159,6 +159,13 @@ a{
   width: 200px;
 }
 
+@media (max-width:320px){
+  .blog-post-image2{
+    height: 200px;
+    width: 120px;
+  }
+}
+
 /* end of blogsDisplaySection */
 
 
