@@ -20,14 +20,39 @@
 		<meta name="author" content="">
 		<link rel="icon" href="favicon.ico">
 		<title><%-found_post.title%></title>
-		<link href="/css/luccy.css" rel="stylesheet">
+    <link href="/css/luccy.css" rel="stylesheet">
+	<link href="/css/menu.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	</head>
 
-	
+  
+<!-- ################  NAVBAR SECTION      ########################################## -->
+  
+  
+<div class="menu-wrap">
+  <input type="checkbox" class="toggler">
+  <div class="hamburger"><div></div></div>
+  <div class="menu">
+    <div>
+      <div>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="http://www.myquranjourney.net">About</a></li>
+          <li><a href="tel:07061862072">Contact</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/register">Signup</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-<!-- showcase -->
-  <div class="customContainer" id="showcas">
+
+
+<!-- ################  SHOWCASE SECTION      ########################################## -->
+
+  <div class="customContainer">
     <div class="mobileBar wrapperOne">
         <div class="toggler showcaseWrapItemOne">
           <!-- Toggler Goes Here -->
@@ -64,13 +89,78 @@
   </div> 
 </section>
 <!-- end of article section -->
+
+
+
+												
+<!-- ################  COMMENT SECTION      ########################################## -->
+
+
+					
+<section class="commentSection">
+      <p>
+          <button class="commentCounterBtn">
+            <strong class="commentCounterText">
+              <%= found_post.comments.length %>
+            COMMENT<% if (found_post.comments.length > 1){%>S
+                  <% } else {}; %>
+            </strong> 
+          </button>
+        <!-- <span class="pullRight">
+        <a class="addNewComment" href="/posts/<%=found_post._id%>/comments/new">
+          Add New Comment
+        </a>
+        </span> -->
+        <button class="addNewCommentBtn pullRight">
+          <strong class="addNewCommentText">
+            Add New Comment
+          </strong> 
+        </button>
+      </p>
+
+      <br>
+      <br>
+
+    <% found_post.comments.forEach(function(comment){ %>
+          
+      <div class="row">
+        <div class="col-md-12"></div>
+            <p>
+              <i class="fa fa-user" aria-hidden="true"></i>    
+              <strong style="color: rgb(222, 191, 115)">
+                <%= comment.author.username %>
+              </strong>
+            </p>
+            
+          <p style="font-size: small;"><%= comment.body %></p>
+          <br>
+
+      <% if(currentUser && String(comment.author.id) === String(currentUser._id)){ %>
+          <a class="btn btn-xs btn-warning"
+            href="/posts/<%=found_post._id%>/comments/<%=comment._id%>/edit">
+            Edit
+          </a>
+          <form id="delete-book" action="/posts/<%=found_post._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+            <input type="submit" class="btn btn-xs btn-danger" value="Delete"> </input>
+          </form>
+      <% }%>
+      </div>
+    <% }); %>
+</section>
+              <!-- <div class="read-more"><a href="http://myquranjourney.net">Join us in this journey!</a></div> -->
+
+
+
+<!-- ################  End of comment section      ########################################## -->
+
+
+
+
+
+
+
+              <!-- ############# FOOTER SECTION ##### -->
   
-
-
-
-
-
-<!-- footer -->
 <div class="customContainer">
   <div class="footerSection">
     <p>Copyright MQJ &copy; 2020. All rights reserved</p>
