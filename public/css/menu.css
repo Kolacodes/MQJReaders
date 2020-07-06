@@ -40,7 +40,6 @@
     border-radius: 35px;
     text-align: center;
     color: white;
-    /* color: rgb(222, 191, 115); */
     font-size: 1.7em;
     box-shadow: 0px 10px 11px -1px rgba(0,0,0,0.79);
 }
@@ -151,14 +150,11 @@
 }
 
 .menu-wrap .menu > div > div > ul > li {
-  font-family: 'PT Sans', sans-serif;
   list-style: none;
   color: #fff;
   color: rgb(222, 191, 115);
-
-  /* color: #e951a7;; */
-  font-size: 1.5rem;
-  padding: 1rem;
+  font-size: 2rem;
+  padding: 2rem;
 }
 
 

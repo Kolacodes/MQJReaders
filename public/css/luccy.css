@@ -48,19 +48,12 @@ a{
 .clr{
   clear: both;
 }
-/* 
-.pullRight{
-  position: absolute;
-  right: 0em;
-} */
 
 /* end of utility classes */
 
 
 
 #showcase{
-  /* height: 30vh; */
-  /* background: red; */
 }
 
 .wrapperOne{
@@ -151,7 +144,6 @@ a{
   }
 }
 
-
 .blog-post-image2{
   height: 300px;
   width: 200px;
@@ -185,12 +177,11 @@ a{
 /* end of blogsDisplaySection */
 
 
-
 .blogPostSection{
   padding-top: 10%;
   padding-right: 5%;
   padding-left: 5%;
-  padding-bottom: 20%;
+  padding-bottom: 15%;
 }
 
 .blogTitle{
@@ -206,7 +197,6 @@ a{
   color: rgb(222, 191, 115);
   line-height: 0.5em;
 }
-
 
 .blogTitle {
   font-weight: 400;
@@ -246,7 +236,6 @@ a{
 }
 }
 
-
 @media (min-width: 768px){
   .figure {
     /* max-width: 2500px; */
@@ -265,11 +254,8 @@ a{
 
 .commentSection{
   padding: 5%;
-  margin: 15% 20% ;
+  margin: 5% 10% 10% 10% ;
   background-color: var(--secondary-background);
-
-  /* border: 4px solid var(--secondary-color); */
-
 }
 
 
@@ -282,27 +268,23 @@ a{
 .commentCounterBtn{
   background: white;
   background: rgb(222, 191, 115);
-  padding: 2px;
+  padding: 3px;
   border: solid white;
-
+  color: white;
+  font-weight: 600;
 }
 
 .commentCounterText{
-  color: rgb(222, 191, 115);
   color: white;
 }
 
-
-
 .addNewCommentBtn{
   background: white;
-  /* background: rgb(222, 191, 115); */
   padding: 2px;
   color: rgb(222, 191, 115);
   border: solid white;
-
+  font-weight: 600;
 }
-
 
 .addNewCommentText{
   color: rgb(222, 191, 115);
@@ -310,9 +292,11 @@ a{
 
 .fa-user{
   color: var(--primary-text);
-  /* color: red; */
 }
 
+
+
+ /* ################  FOOTER SECTION      ##########################################  */
 
 
 .footerSection{

@@ -1,30 +1,28 @@
-<html lang="en">
-    <head>
-        <title>MQJ BLOG</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        
-    </head>
+
+
+
+<% include ../partials/header %>
+
+
+<link href="/css/luccy.css" rel="stylesheet">
+	<link href="/css/menu.css" rel="stylesheet" />
+
+<br>
+<br>
+<br>
+
 
 <div class="container">
-    <div style="text-align: center;">
-
-        <strong style="color: rgb(162, 165, 16)">
-            <button style="background-color: white">
-                <a href="/posts">Visit Homepage</a>
-            </button>
-        </strong>
-
-    </div>
     <div class="row">
             
-            <div style="width:30%; margin:100px auto ">
-                <h3>Add New Comment to <%= found_post.title %> </h3>
+            <div style="width:60%; margin:100px auto ">
+                <h3 class="header">Add New Comment to <%= found_post.title %> </h3>
                 <form action="/posts/<%= found_post._id %>/comments" method="POST">
                     <div class="form-group"> <input class="form-control" type="text" name="comment[body]" placeholder="comment"> </div>
-                    <div class="form-group"> <button class="btn btn-lg btn-primary btn-block">Submit!</button> </div>
+                    <div class="form-group"> <button style="background-color: rgb(222, 191, 115);" class="btn btn-lg btn-primary btn-block">Submit!</button> </div>
     
                 </form>   
-                <a href="/posts">Go Back</a>
+                <a href="/posts/<%= found_post._id %>">Go Back</a>
             </div>
     
     </div>

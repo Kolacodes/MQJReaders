@@ -100,22 +100,17 @@
 <section class="commentSection">
       <p>
           <button class="commentCounterBtn">
-            <strong class="commentCounterText">
+            <a class="commentCounterText" href="#">
               <%= found_post.comments.length %>
             COMMENT<% if (found_post.comments.length > 1){%>S
                   <% } else {}; %>
-            </strong> 
-          </button>
-        <!-- <span class="pullRight">
-        <a class="addNewComment" href="/posts/<%=found_post._id%>/comments/new">
-          Add New Comment
-        </a>
-        </span> -->
-        <button class="addNewCommentBtn pullRight">
-          <strong class="addNewCommentText">
-            Add New Comment
-          </strong> 
+            </a>
         </button>
+          <button class="addNewCommentBtn pullRight">
+              <a class="addNewCommentText" href="/posts/<%=found_post._id%>/comments/new">
+                Add New Comment
+              </a>
+          </button>
       </p>
 
       <br>
