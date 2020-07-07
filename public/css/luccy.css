@@ -305,8 +305,6 @@ a{
   border: solid var(--secondary-color);
   background-color: var(--primary-color);
   border: solid var(--primary-color);
-  background-color: var(--primary-text);
-  border: solid var(--primary-text);
 	text-transform: uppercase;
 	font-weight: 700;
 	font-size: 12px;
