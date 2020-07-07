@@ -37,7 +37,7 @@ body{
 
 /* Utility Classes */
 a{
-  text-decoration: none;
+  text-decoration: none !important;
   list-style: none;
   color: var(--primary-text);
 }
