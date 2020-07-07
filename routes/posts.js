@@ -21,7 +21,7 @@ router.get("/", function(req, res){
     })
 });
 
-// NEW - shows form to create new book 2
+// NEW - shows form to create new post 2
   
 router.get("/new", middleware.isLoggedIn, function(req, res) {
     res.render("posts/new")
@@ -65,5 +65,20 @@ router.get("/:id", function(req, res){
         }
     })
 })
+
+  
+// POST EDIT ROUTE 
+router.get("/:id/edit", middleware.checkCommentOwnership, function(req, res){
+    post.findById(req.params.id, function(err, foundPost){
+      if(err){
+        res.redirect("back");
+      } else {
+        res.render("posts/edit", {found_post:foundPost})
+  
+      };
+    })
+  });
+
+
 
 module.exports = router;
