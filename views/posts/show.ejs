@@ -1,3 +1,5 @@
+<% include ../partials/header %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +24,6 @@
 		<title><%-found_post.title%></title>
     <link href="/css/luccy.css" rel="stylesheet">
 	<link href="/css/menu.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	</head>
 
   
@@ -46,7 +47,6 @@
     </div>
   </div>
 </div>
-
 
 
 
@@ -141,6 +141,12 @@
       <% }%>
       </div>
     <% }); %>
+    <button class="read-more">
+      <a href="http://myquranjourney.net">
+        Join us in this journey!
+      </a>
+    </button>
+
 </section>
               <!-- <div class="read-more"><a href="http://myquranjourney.net">Join us in this journey!</a></div> -->
 
@@ -151,18 +157,10 @@
 
 
 
+<% include ../partials/footer %>
 
 
-
-              <!-- ############# FOOTER SECTION ##### -->
-  
-<div class="customContainer">
-  <div class="footerSection">
-    <p>Copyright MQJ &copy; 2020. All rights reserved</p>
-    <p>Created by <a href="http://afrocodez.com"><span>Afrocodez</span></a></p>
-  </div>
-</div>
-<!-- end of footer -->  
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 </body>
 </html>

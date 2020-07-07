@@ -15,7 +15,7 @@
 <div class="container">
     <div class="row">
             
-            <div style="width:60%; margin:100px auto ">
+            <div style="width:90%; margin:100px auto ">
                 <h3 class="header">Add New Comment to <%= found_post.title %> </h3>
                 <form action="/posts/<%= found_post._id %>/comments" method="POST">
                     <div class="form-group"> <input class="form-control" type="text" name="comment[body]" placeholder="comment"> </div>
@@ -27,3 +27,5 @@
     
     </div>
  </div>
+
+<% include ../partials/footer %>

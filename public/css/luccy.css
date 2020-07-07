@@ -290,8 +290,50 @@ a{
   color: rgb(222, 191, 115);
 }
 
+#delete-book {
+  display: inline;
+}
+
+
 .fa-user{
   color: var(--primary-text);
+}
+
+
+.read-more  {
+	display: inline-block;
+	padding: 5px 30px;
+  margin-left: 10%;
+  margin-right: 10%;
+  align-items: center;
+  background-color: rgb(222, 191, 115);
+  background-color: blue;
+  border: solid blue;
+  background-color: orangered;
+  border: solid orange;
+  background-color: var(--secondary-color);
+  border: solid var(--secondary-color);
+  background-color: rgb(222, 191, 115);
+  border: solid rgb(222, 191, 115);
+  
+  
+	font-family: "Open Sans", Sans-serif;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 12px;
+	letter-spacing: 1.7px;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+}
+
+.read-more a{
+  color: white;
+}
+.read-more:hover {
+	background-color: rgb(222, 191, 115);
+	color: #fff;
 }
 
 
