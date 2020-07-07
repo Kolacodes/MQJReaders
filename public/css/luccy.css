@@ -302,9 +302,9 @@ a{
 
 .read-more  {
 	display: inline-block;
-	padding: 5px 30px;
-  margin-left: 10%;
-  margin-right: 10%;
+  padding-left: 7px;
+	padding-right: 7px;
+  
   align-items: center;
   background-color: rgb(222, 191, 115);
   background-color: blue;
@@ -313,10 +313,6 @@ a{
   border: solid orange;
   background-color: var(--secondary-color);
   border: solid var(--secondary-color);
-  background-color: rgb(222, 191, 115);
-  border: solid rgb(222, 191, 115);
-  
-  
 	font-family: "Open Sans", Sans-serif;
 	text-transform: uppercase;
 	font-weight: 700;
