@@ -1,10 +1,5 @@
 let modal = document.getElementById('simpleModal');
-let modalBtn = document.getElementById('modalBtn');
-// add [] cause close button is collection of a buttons
-let closeBtn = document.getElementsByClassName('closeBtn')[0];
-
-//listen for open click
-modalBtn.addEventListener('click', openModal);
+let closeBtn = document.querySelector('.closeBtn');
 
 // listen for close click
 closeBtn.addEventListener('click', closeModal);
