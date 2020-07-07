@@ -7,7 +7,8 @@
   box-sizing: border-box;
 }
 
-/* CS Variables */
+ /* ################  CSS VARIABLES      ########################################## */
+
 :root{
   --primary-color: #f4837d;
   --secondary-color:#3b4b7f;
@@ -35,7 +36,10 @@ body{
   background-color: var(--primary-background);
 }
 
-/* Utility Classes */
+
+
+ /* ################  UTILITY CLASSES      ########################################## */
+
 a{
   text-decoration: none !important;
   list-style: none;
@@ -49,7 +53,105 @@ a{
   clear: both;
 }
 
-/* end of utility classes */
+
+ /* ################  POPUP MODAL STYLES      ########################################## */
+
+:root {
+  --primary-color: #f4837d;
+	--MainDark: #333;
+	--MainWhite: #fff;
+	--MainWhiteGrey: #f4f4f4;
+	--MainGray: #ccc;
+	--MainBlack: #000;
+  }
+  
+  .button {
+	background: var(--primary-color);
+	padding: .5rem .3rem;
+	border: none;
+  }
+  
+  .button:hover {
+	background: var(--MainDark);
+  }
+  
+  .modalC {
+	/* display: none; */
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.5);
+  }
+  
+  .modal-content {
+	background-color: var(--MainWhiteGrey);
+	margin: 20% auto;
+	z-index: 1;
+	padding: 20px;
+	width: 80%;
+	box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
+	animation-name: modalopen;
+	animation-duration: 1s;
+  }
+  
+  @keyframes modalopen {
+	from {opacity: 0}
+	to {opacity: 1};
+  }
+  
+  .modal-header h2, .modal-footer h2 {
+	margin: 0;
+  }
+  
+	
+.modal-header {
+	background: rgb(222, 191, 115);
+	padding: 1rem;
+  font-weight: 600;
+  font-style: normal;
+	font-size: 30px;
+	color: var(--MainGrey);
+  padding-right: 15%;
+  padding-left: 15%;
+  letter-spacing: 0em;
+  line-height: 1.3em;
+  text-transform: none;
+  text-align: center;
+  text-transform: none;
+}
+
+
+.modal-footer {
+	background: rgb(222, 191, 115);
+	padding: 10px;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 30px;
+  padding-right: 15%;
+  padding-left: 15%;
+  color: var(--MainWhite);
+  letter-spacing: 0em;
+  line-height: 1.3em;
+  text-transform: none;
+  text-align: center;
+  text-transform: none;
+}
+  
+  .closeBtn {
+	color: var(--MainGray);
+	float: right;
+	font-size: 2rem;
+  }
+  
+  .closeBtn:hover, closeBtn:focus {
+	color: red;
+	text-decoration: none;
+	cursor: pointer;
+  }
 
 
 
@@ -117,7 +219,9 @@ a{
 }
 
 
-/* blogs Display Section */
+
+ /* ################  BLOGS DISPLAY SECTION STYLES      ########################################## */
+
 
 .blogsDisplaySection{
   display: grid;
@@ -174,7 +278,10 @@ a{
 }
 }
 
-/* end of blogsDisplaySection */
+
+
+
+ /* ################  BLOG POST SECTION      ########################################## */
 
 
 .blogPostSection{
@@ -249,7 +356,7 @@ a{
   }
 
 
- /* ################  COMMENT SECTION      ##########################################  */
+ /* ################  COMMENT SECTION STYLES    ##########################################  */
   
 
 .commentSection{
@@ -333,5 +440,4 @@ a{
   padding-left: 5%;
   padding-bottom: 7%;
   text-align: center;
-
 }

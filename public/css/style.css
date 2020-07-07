@@ -57,13 +57,12 @@
 .modal-header {
 	background: rgb(222, 191, 115);
 	padding: 1rem;
-
   font-weight: 600;
   font-style: normal;
-  font-size: 30px;
+	font-size: 30px;
+	color: var(--MainGrey);
   padding-right: 15%;
   padding-left: 15%;
-  color: var(--MainWhite);
   letter-spacing: 0em;
   line-height: 1.3em;
   text-transform: none;
@@ -74,10 +73,7 @@
 
 .modal-footer {
 	background: rgb(222, 191, 115);
-	padding: 1rem;
 	padding: 10px;
-
-
   font-weight: 600;
   font-style: normal;
   font-size: 30px;
@@ -98,59 +94,7 @@
   }
   
   .closeBtn:hover, closeBtn:focus {
-	color: var(--MainBlack);
+	color: red;
 	text-decoration: none;
 	cursor: pointer;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
