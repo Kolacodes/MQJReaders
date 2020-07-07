@@ -84,14 +84,19 @@ a{
 	height: 100%;
 	width: 100%;
 	overflow: auto;
-	background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.5);
+  background-color: black;
+	background-color: var(--MainWhiteGrey);
+
+  
+  
   }
   
   .modal-content {
 	background-color: var(--MainWhiteGrey);
 	margin: 5% auto;
 	z-index: 1;
-	padding: 10px;
+	padding: 15px;
 	width: 80%;
 	box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
 	animation-name: modalopen;
