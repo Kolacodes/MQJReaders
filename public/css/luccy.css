@@ -86,7 +86,9 @@ a{
 	overflow: auto;
   background-color: rgba(0,0,0,0.5);
   background-color: black;
-	background-color: var(--MainWhiteGrey);
+  background-color: var(--MainWhiteGrey);
+  background-color: var(--primary-text);
+  
 
   
   
