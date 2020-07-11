@@ -83,7 +83,7 @@
 
 
 <section class="blogsDisplaySection">
-	<% all_posts.forEach(function(each_post) { %>
+	<% all_posts.slice().reverse().forEach(function(each_post) { %>
 <div class="wrapItem2"><a href="/posts/<%= each_post._id %>"><img class="blog-post-image2" alt="" src="<%=each_post.image%>" /></a>
 		<p> <a class="postTitleIndex" href="/posts/<%= each_post._id %>"> <em class="postTitleIndex"><%- each_post.title%></em> </a></p>
 </div>
