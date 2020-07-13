@@ -100,7 +100,9 @@ a{
 	width: 80%;
 	box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
 	animation-name: modalopen;
-	animation-duration: 1s;
+  animation-duration: 1s;
+  /* inline-size:0.5px; */
+  line-height: 1em;
   }
   
   @keyframes modalopen {
@@ -114,7 +116,8 @@ a{
   
 	
 .modal-header {
-	background: rgb(222, 191, 115);
+  background: rgb(222, 191, 115);
+  background: var(--primary-color);
 	padding: 1rem;
   font-weight: 600;
   font-style: normal;
@@ -131,7 +134,9 @@ a{
 
 
 .modal-footer {
-	background: rgb(222, 191, 115);
+  background: rgb(222, 191, 115);
+  background: var(--primary-color);
+  
 	padding: 10px;
   font-weight: 600;
   font-style: normal;
