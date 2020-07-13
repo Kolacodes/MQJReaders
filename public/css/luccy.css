@@ -93,7 +93,7 @@ a{
   }
   
   .modal-content {
-	background-color: var(--MainWhiteGrey);
+  background-color: var(--MainWhiteGrey);
 	margin: 5% auto;
 	z-index: 1;
 	padding: 15px;
@@ -101,8 +101,7 @@ a{
 	box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
 	animation-name: modalopen;
   animation-duration: 1s;
-  /* inline-size:0.5px; */
-  line-height: 1em;
+  line-height: 1.5em;
   }
   
   @keyframes modalopen {
