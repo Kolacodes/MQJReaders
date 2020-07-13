@@ -122,7 +122,9 @@ a{
   font-weight: 600;
   font-style: normal;
 	font-size: 30px;
-	color: var(--MainGrey);
+  /* color: var(--MainGrey); */
+  color: var(--MainWhite);
+  
   padding-right: 15%;
   padding-left: 15%;
   letter-spacing: 0em;
@@ -143,12 +145,17 @@ a{
   font-size: 30px;
   padding-right: 15%;
   padding-left: 15%;
-  color: var(--MainWhite);
+  color: var(--MainWhite) !important;
   letter-spacing: 0em;
   line-height: 1.3em;
   text-transform: none;
   text-align: center;
   text-transform: none;
+}
+
+.modal-footer a{
+  color: var(--MainWhite);
+
 }
   
   .closeBtn {
