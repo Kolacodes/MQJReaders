@@ -86,10 +86,7 @@ a{
 	overflow: auto;
   background-color: rgba(0,0,0,0.5);
   /* background-color: var(--MainWhiteGrey); */
-  
 
-  
-  
   }
   
   .modal-content {
@@ -451,6 +448,7 @@ a{
 
 .footerSection{
   background-color: var(--secondary-background);
+  margin-top: 35%;
   padding-top: 7%;
   padding-right: 5%;
   padding-left: 5%;

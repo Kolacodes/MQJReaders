@@ -2,14 +2,10 @@
 
 <link href="/css/luccy.css" rel="stylesheet">
 	<link href="/css/menu.css" rel="stylesheet" />
-
-
- <script src="//cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
-
+    <script src="//cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
 
 <div class="container">
-    <div class="row">
-            
+    <div class="row">     
             <div style="width:90%; margin:100px auto ">
                 <h1 class="header" style="text-align: center;">Add a New Post</h1>
                 <form action="/posts" method="POST">
@@ -24,13 +20,13 @@
                 </form>   
                 <a href="/posts">Go Back</a>
             </div>
-            
-    
     </div>
- </div>
+</div>
 
- <script>
+<script>
     CKEDITOR.replace( 'body' );
   </script>
+
+ <!-- ################  END OF FORM SECTION      ##########################################  -->
 
 <% include ../partials/footer %>
