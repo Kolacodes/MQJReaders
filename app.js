@@ -14,7 +14,7 @@ var express         = require ("express");
     indexRoutes = require("./routes/index"),
     postRoutes = require("./routes/posts"),
     commentRoutes = require("./routes/comments"),
-    // url             = "mongodb://localhost/mqj_blog",
+    // url             = "mongodb://localhost/mqj_blog";
     url = "mongodb+srv://root:mypassword@bookreviewcluster-mrefw.mongodb.net/mqjreaders?retryWrites=true&w=majority";
 
 
@@ -26,6 +26,9 @@ mongoose.connect("mongodb://localhost/mqj_blog");
 mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true} )
   .then(() => {
     console.log('Mongo Connected')
+  })
+  .catch(function(err){
+    console.log(err);
   });
 
 
