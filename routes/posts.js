@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var middleware = require("../middleware");
-flash           =  require("connect-flash");
+var flash           =  require("connect-flash");
 var post = require("../models/post");
 var comment = require("../models/comment");
 var user = require("../models/user");

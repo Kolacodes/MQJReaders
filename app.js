@@ -14,6 +14,7 @@ var express         = require ("express");
     indexRoutes = require("./routes/index"),
     postRoutes = require("./routes/posts"),
     commentRoutes = require("./routes/comments"),
+    clipRoutes    = require("./routes/clips"),
     // url             = "mongodb://localhost/mqj_blog";
     url = "mongodb+srv://root:mypassword@bookreviewcluster-mrefw.mongodb.net/mqjreaders?retryWrites=true&w=majority";
 
@@ -61,6 +62,7 @@ app.use(function(req, res, next ){
 app.use("/", indexRoutes);
 app.use("/posts", postRoutes); 
 app.use("/posts/:id/comments", commentRoutes);
+app.use("/clips", clipRoutes);
 
 
 app.listen(port, function(){console.log("server successfully started..")});
