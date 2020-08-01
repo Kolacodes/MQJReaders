@@ -32,13 +32,14 @@ router.post("/", function(req, res){
   let clipUrl = req.body.clipUrl;
   let speaker = req.body.speaker
   let image = req.body.image;
+  let duration = req.body.duration;
   let desc = req.body.desc;
   let date = req.body.date;
   let postedBy = {
       id: req.user._id,
       username: req.user.username
   };
-  let new_clip = {title:title, clipUrl:clipUrl, speaker:speaker, image:image, desc:desc, date:date, postedBy:postedBy};
+  let new_clip = {title:title, clipUrl:clipUrl, speaker:speaker, image:image, duration:duration, desc:desc, date:date, postedBy:postedBy};
   
   // create new clip and save in DB
   clip.create(new_clip, function(err, new_clip){

@@ -313,8 +313,17 @@ a{
   text-align: center;
   align-items: center;
   font-size: small;
-  color: var(--primary-color);
   color: rgb(222, 191, 115);
+  line-height: 0.5em;
+}
+
+
+.clipTitleIndex{
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  font-size: small;
+  color: var(--primary-text);
   line-height: 0.5em;
 }
 

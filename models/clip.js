@@ -5,6 +5,7 @@ let clipSchema = new mongoose.Schema({
   speaker: String,
   title:   String,
   image:    String,
+  duration:    String,
   desc:    String,
   clipUrl:    String,
   date:   String,
