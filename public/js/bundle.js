@@ -1,7 +1,6 @@
 let modal = document.getElementById('simpleModal');
 let closeBtn = document.querySelector('.closeBtn');
 
-
 // listen for close click
 closeBtn.addEventListener('click', closeModal);
 
@@ -26,4 +25,12 @@ function outsideClick(e) {
   if(e.target == modal) {
     modal.style.display = 'none';
   }
-}
+};
+
+// let downloadCounter = document.getElementsByClassName('download-counter');
+
+// downloadCounter.addEventListener('click', addOne);
+
+// function addOne(){
+//   console.log("one");
+// };

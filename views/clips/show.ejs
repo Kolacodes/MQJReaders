@@ -39,6 +39,7 @@
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="http://www.myquranjourney.net">About</a></li>
+          <li><a href="/clips">MQJ Clips</a></li>
           <li><a href="tel:07061862072">Contact</a></li>
           <li><a href="/login">Login</a></li>
           <li><a href="/register">Signup</a></li>
@@ -78,8 +79,11 @@
       <h1 class="blogTitle"><%-found_clip.title%></h1>
 						<div class="author">Speaker: <%-found_clip.speaker%></div>
 						<!-- <br> -->
+      <p>
+        <div class="author"><i class="fa fa-file-audio-o" aria-hidden="true"></i> <%-found_clip.duration%></div>   
 
-      <div class="author"><%-found_clip.duration%></div>      
+      </p>
+         
 			<img class="figure" src="<%=found_clip.image%>" alt="">
 			<br>
       <div class="body"><%-found_clip.desc%></div>
@@ -102,9 +106,10 @@
 <!-- ################  End of comment section      ########################################## -->
 
 <div class="col text-center">
-  <button class="btn btn-default read-more">
+  <button class="download-counter btn btn-default read-more">
     <a href="<%=found_clip.clipUrl%>">
-      Download Clip
+      <i class="fa fa-file-audio-o" aria-hidden="true"></i>
+      Listen & Download
     </a>
   </button>
 </div>
