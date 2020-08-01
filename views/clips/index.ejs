@@ -1,7 +1,6 @@
 <% include ../partials/header %>
 
 
-
 <div class="menu-wrap">
   <input type="checkbox" class="toggler">
   <div class="hamburger"><div></div></div>
@@ -58,7 +57,11 @@
         </div>
         <div class="logo showcaseWrapItemTwo">
           <a href="#">
-					 <img src="images/logo2.jpeg" alt="Capture by Lucy" class="MobileBarBrandingLogo">
+            <!-- https://images.unsplash.com/photo-1557231102-1345785056ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60 -->
+           
+           <!-- <img src="images/logo2.jpeg" alt="Capture by Lucy" class="MobileBarBrandingLogo"> -->
+					 <img src="https://images.unsplash.com/photo-1557231102-1345785056ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Capture by Lucy" class="MobileBarBrandingLogo">
+           
 				</a>
         </div>
         <div class="padlock showcaseWrapItemThree">
@@ -82,9 +85,11 @@
   
 
 <section class="blogsDisplaySection">
-	<% all_clips.slice().reverse().forEach(function(each_clip) { %>
-<div class="wrapItem2"><a href="/clips/<%= each_clip._id %>"><img class="blog-post-image2" alt="" src="<%=each_clip.image%>" /></a>
-		<p> <a class="postTitleIndex" href="/clips/<%= each_clip._id %>"> <em class="postTitleIndex"><%- each_clip.title%></em> </a></p>
+  <% all_clips.slice().reverse().forEach(function(each_clip) { %>
+<div class="wrapItem2"><a href="/clips/<%= each_clip._id %>"><img class="blog-post-image2" alt="" src="<%- each_clip.image%>" /></a>
+
+    
+    <p> <a class="postTitleIndex" href="/clips/<%= each_clip._id %>"> <em class="postTitleIndex"><%- each_clip.title%></em> </a></p>
 </div>
 <%  }); %>
 </section>

@@ -6,6 +6,9 @@ var express         = require ("express");
     methodOverride  = require("method-override"),
     Post            = require ("./models/post"),
     Comment         = require ("./models/comment"),
+    Clip         = require ("./models/clip"),
+    ClipComment         = require ("./models/clipComment"),
+
     passport        = require ("passport"),
     flash           =  require("connect-flash"),
     LocalStrategy   = require ("passport-local"),

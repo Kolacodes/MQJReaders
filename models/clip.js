@@ -1,23 +1,23 @@
-let moogoose = require("mongoose");
+let mongoose = require("mongoose");
 
 // SCHEMA SETUP
-let clipSchema = new moogoose.Schema({
+let clipSchema = new mongoose.Schema({
   speaker: String,
   title:   String,
-  iamge:    String,
+  image:    String,
   desc:    String,
   clipUrl:    String,
   date:   String,
   postedBy: {
     id: {
-      type: moogoose.Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref:  "User"
     },
     username: String
   },
   clipComments: [
     {
-    type: moogoose.Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref:  "ClipComment"
     }
 
