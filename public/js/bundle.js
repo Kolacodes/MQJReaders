@@ -32,5 +32,6 @@ function outsideClick(e) {
 // downloadCounter.addEventListener('click', addOne);
 
 // function addOne(){
-//   console.log("one");
+//   alert("mash!")
+
 // };
