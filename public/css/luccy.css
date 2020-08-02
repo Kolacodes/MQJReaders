@@ -382,7 +382,7 @@ a{
   
 
 .commentSection{
-  padding: 5%;
+  padding: 5% 10% 5% 10%;
   margin: 5% 10% 1% 10% ;
   background-color: var(--secondary-background);
 }
