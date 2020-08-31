@@ -2,6 +2,7 @@ var express         = require ("express");
     app             = express(),
     port            = process.env.PORT || 3000,
     bodyParser      = require ("body-parser"),
+    fetch           = require ("node-fetch"),
     mongoose        = require ("mongoose"),
     methodOverride  = require("method-override"),
     Post            = require ("./models/post"),
