@@ -1,16 +1,9 @@
-const express         = require ("express"),
-    dotenv         = require ("dotenv"),
-
+var express         = require ("express");
     app             = express(),
-
-    PORT            = process.env.PORT || 3000,
-    connectDB       = require('./config/db'),
-    morgan          = require('morgan'),
-    mongoose          = require('mongoose'),
-    session          = require('express-session'),
-    MongoStore       = require('connect-mongo')(session),
+    port            = process.env.PORT || 3000,
     bodyParser      = require ("body-parser"),
     fetch           = require ("node-fetch"),
+    mongoose        = require ("mongoose"),
     methodOverride  = require("method-override"),
     Post            = require ("./models/post"),
     Comment         = require ("./models/comment"),
@@ -20,51 +13,43 @@ const express         = require ("express"),
     passport        = require ("passport"),
     flash           =  require("connect-flash"),
     LocalStrategy   = require ("passport-local"),
-    User            = require ("./models/User"),
+    User            = require ("./models/user"),
     
-    // indexRoutes = require("./routes/index"),
+    indexRoutes = require("./routes/index"),
     postRoutes = require("./routes/posts"),
     commentRoutes = require("./routes/comments"),
     clipRoutes    = require("./routes/clips"),
     salesRoutes   = require("./routes/sales"),
     shortstoriesRoutes   = require("./routes/shortstories"),
-    url             = "mongodb://localhost/mqj_blog";
+    // url             = "mongodb://localhost/mqj_blog";
+    url = "mongodb+srv://root:mypassword@bookreviewcluster-mrefw.mongodb.net/mqjreaders?retryWrites=true&w=majority";
 
-// Load config
-dotenv.config( { path: './config/config.env' })
 
-connectDB()
- 
 app.use(bodyParser.urlencoded({extended: true}, { useNewUrlParser: true }));
-app.use(express.static(__dirname + "/public"));
-
-// Logging
-if (process.env.NODE_ENV === 'development') {
-  app.use(morgan('dev'))
-}
-
-
 app.set("view engine", "ejs");
+app.use(express.static(__dirname + "/public"));
+mongoose.connect("mongodb://localhost/mqj_blog");
+
+mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true} )
+  .then(() => {
+    console.log('Mongo Connected')
+  })
+  .catch(function(err){
+    console.log(err);
+  });
 
 
-app.use(methodOverride("_method"));
-app.use(flash());
+  app.use(methodOverride("_method"));
+  app.use(flash());
 
 
 // PASSPORT CONFIGURATION
-require('./config/passport')(passport)
-
-// Sessions
-app.use(
-  session({
-  secret: "Allah is great",
+app.use(require("express-session")({
+  secret: "Once again Allah scales me through!",
   resave: false,
-  saveUninitialized: false,
-  // Save session in DB
-  store: new MongoStore({ mongooseConnection: mongoose.connection })
+  saveUninitialized: false
 }));
 
-// Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
@@ -80,8 +65,7 @@ app.use(function(req, res, next ){
 });
 
 //requiring routes
-app.use("/", require('./routes/index'));
-app.use("/auth", require('./routes/auth'));
+app.use("/", indexRoutes);
 app.use("/posts", postRoutes); 
 app.use("/posts/:id/comments", commentRoutes);
 app.use("/clips", clipRoutes);
@@ -89,7 +73,4 @@ app.use("/sales", salesRoutes);
 app.use("/shortstories", shortstoriesRoutes);
 
 
-app.listen(
-  PORT,
-  console.log(`server running in ${process.env.NODE_env} mode on port ${PORT}`)
-  )
+app.listen(port, function(){console.log("server successfully started..")});

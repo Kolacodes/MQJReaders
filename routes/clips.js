@@ -4,7 +4,7 @@ let express = require('express'),
     middleware = require('../middleware'),
     clip       = require('../models/clip'),
     clipComment = require('../models/clipComment'),
-    user        = require('../models/User');
+    user        = require('../models/user');
 
 
 router.get("/", function(req, res){
