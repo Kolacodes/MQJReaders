@@ -43,6 +43,7 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'))
 }
 
+
 // Handlebars
 // app.engine('.hbs', exphbs({ default: 'main', extname: '.hbs' }))
 // app.set('view engine', '.hbs')
