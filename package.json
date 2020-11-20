@@ -7,10 +7,6 @@
     "start": "cross-env NODE_ENV=production node app",
     "dev": "cross-env NODE_ENV=development nodemon app"
   },
-  "engines": {
-    "node": "0.10.x",
-    "npm": "2.1.x"
-  },
   "author": "Almustapha Author",
   "license": "ISC",
   "dependencies": {
