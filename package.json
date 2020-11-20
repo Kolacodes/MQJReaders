@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production node app",
+    "build": "concurrently \"cd client && npm run build\" \"npm build \"",
     "dev": "cross-env NODE_ENV=development nodemon app"
   },
   "author": "Almustapha Author",
