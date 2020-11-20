@@ -39,9 +39,9 @@ app.use(bodyParser.urlencoded({extended: true}, { useNewUrlParser: true }));
 app.use(express.static(__dirname + "/public"));
 
 // Logging
-if (process.env.NODE_ENV === 'development') {
-  app.use(morgan('dev'))
-}
+// if (process.env.NODE_ENV === 'development') {
+//   app.use(morgan('dev'))
+// }
 
 
 // Handlebars
