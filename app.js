@@ -39,9 +39,9 @@ app.use(bodyParser.urlencoded({extended: true}, { useNewUrlParser: true }));
 app.use(express.static(__dirname + "/public"));
 
 // Logging
-// if (process.env.NODE_ENV === 'development') {
-//   app.use(morgan('dev'))
-// }
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'))
+}
 
 
 app.set("view engine", "ejs");
@@ -75,6 +75,7 @@ app.use(function(req, res, next ){
   res.locals.currentUser = req.user;
   res.locals.error = req.flash("error");
   res.locals.success = req.flash("success");
+
   next();
 });
 
@@ -90,5 +91,5 @@ app.use("/shortstories", shortstoriesRoutes);
 
 app.listen(
   PORT,
-  console.log(`server running in mode on port ${PORT}`)
+  console.log(`server running in ${process.env.NODE_env} mode on port ${PORT}`)
   )
