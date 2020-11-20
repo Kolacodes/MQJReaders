@@ -4,7 +4,7 @@ var middleware = require("../middleware");
 var flash           =  require("connect-flash");
 var post = require("../models/post");
 var comment = require("../models/comment");
-var user = require("../models/user");
+var user = require("../models/User");
 
 
 
@@ -66,9 +66,11 @@ router.get("/:id", function(req, res){
     })
 })
 
+
+
   
 // POST EDIT ROUTE 
-router.get("/:id/edit", middleware.checkCommentOwnership, function(req, res){
+router.get("/:id/edit", middleware.checkPostOwnership, function(req, res){
     post.findById(req.params.id, function(err, foundPost){
       if(err){
         res.redirect("back");
@@ -78,6 +80,59 @@ router.get("/:id/edit", middleware.checkCommentOwnership, function(req, res){
       };
     })
   });
+
+
+
+  //@desc  Update Story
+//@route PUT /stories/:id
+router.put('/:id', middleware.checkPostOwnership,async (req,res)=>{  
+    try{
+        let post = await post.findById(req.params.id).lean()
+
+        if(!post){
+            return res.send('error')
+        }
+        if(post.user!=req.user.id){
+            res.redirect('/posts')
+        }else{
+            post = await post.findOneAndUpdate(
+                { _id:req.params.id },req.body ,{
+                    new:true,
+                    runValidators:true
+                }
+            )
+            res.redirect('/')
+        }
+    }
+    catch(err){
+        console.error(err)
+        return res.redirect('/posts')
+    }
+
+})
+
+// POST UPDATE ROUTE
+// router.put("/:id/", middleware.checkPostOwnership, function(err, updatedPost){
+//     // find the actual post and update
+//     post.findByIdAndUpdate(req.params.id, req.body.found_post, function(err, updatedPost){
+//         if(err){
+//             console.log(err)
+//         } else {
+//             res.redirect('/posts/' + req.params.id)
+//         }
+//     } )
+// })
+
+//   DELETE ROUTE
+router.delete('/:id', middleware.checkPostOwnership, function(req, res){
+    post.findByIdAndRemove(req.params.id, function(err, deletedPost){
+        if(err){
+            console.log(err)
+        } else{
+            res.redirect('/posts')
+        }
+    })
+})
 
 
 

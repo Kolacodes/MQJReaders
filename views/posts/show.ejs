@@ -87,6 +87,18 @@
 
 			<br>
       <div class="body"><%-found_post.body%></div>
+
+      <% if(currentUser && String(found_post.postedBy.id) === String(currentUser._id)){ %>
+
+        <!-- <a class="btn btn-xs btn-warning"
+            href="/posts/<%= found_post._id%>/edit">
+            Edit
+          </a> -->
+        
+        <form id="delete-book" action="/posts/<%= found_post._id%>?_method=DELETE" method="POST">
+            <button class="btn btn-xs btn-danger">Delete</button>
+        </form>
+        <% }%>
       
 
     </article>

@@ -1,9 +1,16 @@
-var express         = require ("express");
+const express         = require ("express"),
+    dotenv         = require ("dotenv"),
+
     app             = express(),
-    port            = process.env.PORT || 3000,
+
+    PORT            = process.env.PORT || 3000,
+    connectDB       = require('./config/db'),
+    morgan          = require('morgan'),
+    mongoose          = require('mongoose'),
+    session          = require('express-session'),
+    MongoStore       = require('connect-mongo')(session),
     bodyParser      = require ("body-parser"),
     fetch           = require ("node-fetch"),
-    mongoose        = require ("mongoose"),
     methodOverride  = require("method-override"),
     Post            = require ("./models/post"),
     Comment         = require ("./models/comment"),
@@ -13,43 +20,53 @@ var express         = require ("express");
     passport        = require ("passport"),
     flash           =  require("connect-flash"),
     LocalStrategy   = require ("passport-local"),
-    User            = require ("./models/user"),
+    User            = require ("./models/User"),
     
-    indexRoutes = require("./routes/index"),
+    // indexRoutes = require("./routes/index"),
     postRoutes = require("./routes/posts"),
     commentRoutes = require("./routes/comments"),
     clipRoutes    = require("./routes/clips"),
     salesRoutes   = require("./routes/sales"),
     shortstoriesRoutes   = require("./routes/shortstories"),
-    // url             = "mongodb://localhost/mqj_blog";
-    url = "mongodb+srv://root:mypassword@bookreviewcluster-mrefw.mongodb.net/mqjreaders?retryWrites=true&w=majority";
+    url             = "mongodb://localhost/mqj_blog";
 
+// Load config
+dotenv.config( { path: './config/config.env' })
 
+connectDB()
+ 
 app.use(bodyParser.urlencoded({extended: true}, { useNewUrlParser: true }));
-app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
-mongoose.connect("mongodb://localhost/mqj_blog");
 
-mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true} )
-  .then(() => {
-    console.log('Mongo Connected')
-  })
-  .catch(function(err){
-    console.log(err);
-  });
+// Logging
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'))
+}
+
+// Handlebars
+// app.engine('.hbs', exphbs({ default: 'main', extname: '.hbs' }))
+// app.set('view engine', '.hbs')
+app.set("view engine", "ejs");
 
 
-  app.use(methodOverride("_method"));
-  app.use(flash());
+app.use(methodOverride("_method"));
+app.use(flash());
 
 
 // PASSPORT CONFIGURATION
-app.use(require("express-session")({
-  secret: "Once again Allah scales me through!",
+require('./config/passport')(passport)
+
+// Sessions
+app.use(
+  session({
+  secret: "Allah is great",
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: false,
+  // Save session in DB
+  store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
 
+// Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
@@ -65,7 +82,8 @@ app.use(function(req, res, next ){
 });
 
 //requiring routes
-app.use("/", indexRoutes);
+app.use("/", require('./routes/index'));
+app.use("/auth", require('./routes/auth'));
 app.use("/posts", postRoutes); 
 app.use("/posts/:id/comments", commentRoutes);
 app.use("/clips", clipRoutes);
@@ -73,4 +91,7 @@ app.use("/sales", salesRoutes);
 app.use("/shortstories", shortstoriesRoutes);
 
 
-app.listen(port, function(){console.log("server successfully started..")});
+app.listen(
+  PORT,
+  console.log(`server running in ${process.env.NODE_env} mode on port ${PORT}`)
+  )
