@@ -1,4 +1,5 @@
-var express         = require ("express");
+"use strict";
+var express         = require ("express"),
     app             = express(),
     port            = process.env.PORT || 3000,
     bodyParser      = require ("body-parser"),
@@ -73,4 +74,4 @@ app.use("/sales", salesRoutes);
 app.use("/shortstories", shortstoriesRoutes);
 
 
-app.listen(port, function(){console.log("server successfully started..")});
+app.listen(port, function(){console.log("server successfully started..")});3
