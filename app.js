@@ -94,5 +94,5 @@ app.use("/shortstories", shortstoriesRoutes);
 
 app.listen(
   PORT,
-  console.log(`server running in ${process.env.NODE_env} mode on port ${PORT}`)
+  console.log(`server running in mode on port ${PORT}`)
   )
