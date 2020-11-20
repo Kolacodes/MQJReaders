@@ -44,9 +44,6 @@ app.use(express.static(__dirname + "/public"));
 // }
 
 
-// Handlebars
-// app.engine('.hbs', exphbs({ default: 'main', extname: '.hbs' }))
-// app.set('view engine', '.hbs')
 app.set("view engine", "ejs");
 
 
@@ -78,7 +75,6 @@ app.use(function(req, res, next ){
   res.locals.currentUser = req.user;
   res.locals.error = req.flash("error");
   res.locals.success = req.flash("success");
-
   next();
 });
 
