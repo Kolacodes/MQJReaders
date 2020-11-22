@@ -57,6 +57,7 @@ router.post("/",  middleware.isLoggedIn, function(req, res){
 router.get("/:comment_id/edit", middleware.checkCommentOwnership, function(req, res){
     Comment.findById(req.params.comment_id, function(err, foundComment){
       if(err){
+        console.log(err);
         res.redirect("back");
       } else {
         res.render("comments/edit", {found_post_id: req.params.id, comment: foundComment})
@@ -70,6 +71,7 @@ router.get("/:comment_id/edit", middleware.checkCommentOwnership, function(req, 
 router.put("/:comment_id", middleware.checkCommentOwnership, function(req, res){
     Comment.findByIdAndUpdate(req.params.comment_id, req.body.comment, function(err, updatedComment){
       if(err){
+        console.log(err);
         res.redirect("back");
       } else {
         res.redirect("/posts/" + req.params.id);
@@ -83,6 +85,7 @@ router.put("/:comment_id", middleware.checkCommentOwnership, function(req, res){
   router.delete("/:comment_id", middleware.checkCommentOwnership, function(req, res){
     Comment.findByIdAndRemove(req.params.comment_id, function(err){
       if(err){
+        console.log(err);
         res.redirect("back");
       } else {
         req.flash("success", "Comment deleted");

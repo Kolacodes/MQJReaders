@@ -15,8 +15,13 @@ router.get("/", function(req, res) {
 
 // show signup/register form
 
-router.get("/register", function(req, res){
-  res.render("register");
+router.get("/register", (req, res)=>{
+  try{
+    res.render("register")
+  }
+  catch(err){
+    console.log(err)
+  }
 });
 
 
@@ -40,9 +45,13 @@ router.post("/register", function(req, res){
 
 // login form route
 
-router.get("/login", function(req, res){
-  res.render("login");
-});
+router.get("/login", (req, res)=>{
+  try{res.render("login")
+  }
+  catch(err){
+    console.log(err)
+  }
+})
 
 
 // login logic route
@@ -51,16 +60,26 @@ router.post("/login", passport.authenticate("local",
     {
       successRedirect: "posts",
       failureRedirect: "login"
-    }), function(req, res){ 
-});
+    }), (req, res)=>{
+      try {
+        
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    )
 
 
 // logout route
 
 router.get("/logout", function(req, res){
+  if(error){
+    console.log(error)
+  } else{
   req.logout();
   req.flash("success", "logged you out!");
   res.redirect("/posts");
+  }
 });
 
 

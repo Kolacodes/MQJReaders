@@ -24,7 +24,11 @@ router.get("/", function(req, res){
 // NEW - shows form to create new post 2
   
 router.get("/new", middleware.isLoggedIn, function(req, res) {
-    res.render("posts/new")
+    if(err){
+        console.log(err)
+    } else {
+        res.render("posts/new")
+    }
    });
 
 
@@ -71,6 +75,7 @@ router.get("/:id", function(req, res){
 router.get("/:id/edit", middleware.checkCommentOwnership, function(req, res){
     post.findById(req.params.id, function(err, foundPost){
       if(err){
+          console.log(err)
         res.redirect("back");
       } else {
         res.render("posts/edit", {found_post:foundPost})

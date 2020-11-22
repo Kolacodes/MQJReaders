@@ -20,8 +20,12 @@ router.get("/", function(req, res){
 
 // NEW - shows form to create new clip
 
-router.get("/new", middleware.isLoggedIn, function(req, res){
-  res.render("clips/new")
+router.get("/new", middleware.isLoggedIn, (req, res)=>{
+  try{res.render("clips/new")
+  }
+  catch(err){
+    console.log(err)
+  }
 })
 
 // CREATE new clip in DB
