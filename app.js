@@ -22,8 +22,8 @@ var express         = require ("express"),
     clipRoutes    = require("./routes/clips"),
     salesRoutes   = require("./routes/sales"),
     shortstoriesRoutes   = require("./routes/shortstories"),
-    url             = "mongodb://localhost/mqj_blog";
-    // url = "mongodb+srv://root:mypassword@bookreviewcluster-mrefw.mongodb.net/mqjreaders?retryWrites=true&w=majority";
+    // url             = "mongodb://localhost/mqj_blog";
+    url = "mongodb+srv://root:mypassword@bookreviewcluster-mrefw.mongodb.net/mqjreaders?retryWrites=true&w=majority";
 
 
 app.use(bodyParser.urlencoded({extended: true}, { useNewUrlParser: true }));
